@@ -1,0 +1,17 @@
+
+{
+	"name": "khaMath",
+	"license": "Copyright",
+	"tags": ["cross","js"],
+	"description": "Some maths matrix code from Kha ( kha.math changed to khaMath and fast stuff removed as FastFloat not really needed ).",
+	"contributors": [
+    "Robert Konrad"
+    "Nanjizal"
+  ],
+	"releasenote": "See https://github.com/nanjizal/khaMath/blob/master/readme.md",
+	"version": "0.0.1",
+	"url": "https://github.com/nanjizal/khaMath",
+	"classPath": "/",
+	"dependencies": {
+  }
+}
