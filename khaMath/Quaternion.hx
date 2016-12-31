@@ -1,8 +1,8 @@
-package kha_math;
+package khaMath;
 
 
-import kha_math.Vector3;
-import kha_math.Matrix4;
+import khaMath.Vector3;
+import khaMath.Matrix4;
 
 // TODO: Check for my own changes
 
