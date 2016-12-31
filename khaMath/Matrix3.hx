@@ -1,4 +1,4 @@
-package kha_math;
+package khaMath;
 
 class Matrix3 {
 	private static inline var width: Int = 3;
