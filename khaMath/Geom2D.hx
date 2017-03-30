@@ -48,7 +48,35 @@ class Geom2D {
             val = u.x + t * (v.x - u.x);
         }
         return val;
+    }   
+    
+    // Returns boolean indicating whether edges ab and cd intersect.
+    public static inline function edgesIntersect (a, b, c, d) {
+        // The edges intersect only if the endpoints of one edge are on the opposite
+        // sides of the other (both ways).
+        var out = true;
+        var u = a.span(b);
+        var su = u.cross(a.span(c)) * u.cross(a.span(d));
+        // If su is positive, the endpoints c and d are on the same side of
+        // edge ab.
+        if (su > 0) {
+            out = false;
+        } else {
+            var v = span(c, d);
+            var sv = v.cross(c.span(a)) * v.cross(c.span(b));
+            if (sv > 0) {
+                out = false;
+            } else {
+                // We still have to check for collinearity.
+                if (su == 0 && sv == 0) {
+                    var abLenSq = distSq(a, b);
+                    out = a.distSq(c) <= abLenSq || a.distSq(d) <= abLenSq;
+                }
+            }
+        }
+        return out;
     }    
+    
     
     // TODO: unsure on vertices and poly structures, may require rethink or relocation?
     /*
