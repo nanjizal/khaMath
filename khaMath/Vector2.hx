@@ -43,6 +43,28 @@ class Vector2 {
 		return x * v.x + y * v.y;
 	}
 	
+	@:extern public inline function cross( v: Vector2 ): Float {
+      		return x * v.y - y * v.y;
+	}
+	
+	@:extern public inline function mid( v: Vector2 ): Float {
+		return new Vector2((x + v.x)/2, (y + v.y)/2);	
+	}
+	
+	@:extern public inline function distSq (v: Vector2 ): Float {
+  		var dx = x - v.x;
+  		var dy = y - v.y;
+  		return dx * dx + dy * dy;
+	}
+	
+	@:extern public inline function span ( v: Vector2 ): Float {
+  		return new Vector2( v.x - x, v.y - y );
+	}
+	
+	@:extern public inline function lenSq (v: Vector2 ): Float {
+  		return x * v.x + y * v.y;
+	}
+	
 	@:extern public inline function normalize(): Void {
 		length = 1;
 	}
