@@ -29,7 +29,7 @@ class Geom2D {
     
     // Check whether v is strictly in the interior of the circumcircle of the
     // triangle abc.
-    public static function pointInCircumcircle(a: Vector2D, b: Vector2D, c: Vector2D, v: Vector2D): Bool {
+    public static inline function pointInCircumcircle(a: Vector2D, b: Vector2D, c: Vector2D, v: Vector2D): Bool {
         var p = circumcenter(a, b, c);
         return p.distSq(v) < a.distSq(p);
     }
