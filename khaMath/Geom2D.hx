@@ -99,7 +99,7 @@ class Geom2D {
         var uv = span(u, v);
         var uvLenSq = lenSq(uv);
         return function( p: Vector2D ){
-            var uvxpu = cross(uv, span(p, u));
+            var uvxpu = uv.cross(span(p, u));
             return uvxpu * uvxpu / uvLenSq;
         };
     }
