@@ -57,7 +57,7 @@ class Vector2 {
   		return dx * dx + dy * dy;
 	}
 	
-	@:extern public inline function span ( v: Vector2 ): Float {
+	@:extern public inline function span ( v: Vector2 ): Vector2 {
   		return new Vector2( v.x - x, v.y - y );
 	}
 	
