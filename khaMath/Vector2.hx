@@ -47,7 +47,7 @@ class Vector2 {
       		return x * v.y - y * v.y;
 	}
 	
-	@:extern public inline function mid( v: Vector2 ): Float {
+	@:extern public inline function mid( v: Vector2 ): Vector2 {
 		return new Vector2((x + v.x)/2, (y + v.y)/2);	
 	}
 	
