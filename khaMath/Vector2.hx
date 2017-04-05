@@ -61,8 +61,8 @@ class Vector2 {
   		return new Vector2( v.x - x, v.y - y );
 	}
 	
-	@:extern public inline function lenSq (v: Vector2 ): Float {
-  		return x * v.x + y * v.y;
+	@:extern public inline function lenSq ( ): Float {
+  		return x * x + y * y;
 	}
 	
 	@:extern public inline function normalize(): Void {
