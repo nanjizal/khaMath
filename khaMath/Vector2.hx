@@ -44,12 +44,12 @@ class Vector2 {
 	}
     
 	@:extern public inline function perp( v: Vector2 ): Float {
-		return x * v.y - y * v.y;
+        	return x * v.y - y * v.x;
 	}
     
 	// faze out
 	@:extern public inline function cross( v: Vector2 ): Float {
-		return x * v.y - y * v.y;
+        	return x * v.y - y * v.x;
 	}
 	
         @:extern public inline function mid( v: Vector2 ): Vector2 {
