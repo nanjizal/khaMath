@@ -42,12 +42,17 @@ class Vector2 {
 	@:extern public inline function dot(v: Vector2): Float {
 		return x * v.x + y * v.y;
 	}
-	
+    
+	@:extern public inline function perp( v: Vector2 ): Float {
+		return x * v.y - y * v.y;
+	}
+    
+	// faze out
 	@:extern public inline function cross( v: Vector2 ): Float {
-      		return x * v.y - y * v.y;
+		return x * v.y - y * v.y;
 	}
 	
-	@:extern public inline function mid( v: Vector2 ): Vector2 {
+        @:extern public inline function mid( v: Vector2 ): Vector2 {
 		return new Vector2((x + v.x)/2, (y + v.y)/2);	
 	}
 	
@@ -68,4 +73,24 @@ class Vector2 {
 	@:extern public inline function normalize(): Void {
 		length = 1;
 	}
+	
+    	// Copyright 2000 softSurfer, 2012 Dan Sunday
+    	// This code may be freely used and modified for any purpose
+    	// providing that this copyright notice is included with it.
+    	// iSurfer.org makes no warranty for this code, and cannot be held
+    	// liable for any real or imagined damage resulting from its use.
+    	// Users of this code must verify correctness for their application.
+	// ported to haxe from c, not tested
+	// snipts below from Dan Sunday's http://geomalgorithms.com/a01-_area.html	
+	
+    	// > 0, p is left of line, counterclockwise
+    	// = 0, p is on the line, none (degenerate)
+	// < 0, p is righ of line, clockwise
+	@:extern public inline function isLeft( a: Vector2, b: Vector2 ): Float {
+		return (( b.x - a.x )*( y - a.y ) - ( x - a.x )*( b.y - a.y ));
+	}
+    
+    	@:extern public static inline function area( a: Vector2, b: Vector2, c: Vector2 ): Float {
+		return Math.abs( a.isLeft( b , c ) / 2. );
+    	}
 }
