@@ -44,4 +44,10 @@ class Vector4 {
 	@:extern public inline function normalize(): Void {
 		length = 1;
 	}
+	
+	// untested
+	@:extern public inline function constrainDistance( anchor: Vector4, distance: Float ): Vector4 {
+  		return this.sub(anchor).normalize().mult(distance).plus(anchor);
+	}
+	
 }
