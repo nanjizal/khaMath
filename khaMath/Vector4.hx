@@ -47,7 +47,7 @@ class Vector4 {
 	
 	// untested
 	@:extern public inline function constrainDistance( anchor: Vector4, distance: Float ): Vector4 {
-  		return this.sub(anchor).normalize().mult(distance).plus(anchor);
+  		return this.sub(anchor).normalize().mult(distance).add(anchor);
 	}
 	
 }
