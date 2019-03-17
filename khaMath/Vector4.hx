@@ -41,9 +41,10 @@ class Vector4 {
 		return new Vector4(x * value, y * value, z * value, w * value);
 	}
 	
-	@:extern public inline function normalize(): Void {
-		length = 1;
-	}
+	@:extern public inline function normalize(): Vector4 {
+		length = 1; 
+		return this;
+	} 
 	
 	// untested
 	@:extern public inline function constrainDistance( anchor: Vector4, distance: Float ): Vector4 {
